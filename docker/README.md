@@ -9,15 +9,15 @@
 ## ``List images``
 
 ### Usage:
-
-    docker images [OPTIONS] [REPOSITORY[:TAG]]
-
-### Aliases:
-
-    docker image ls, docker image list, docker images
-
-### Options:
     
+    docker images [OPTIONS] [REPOSITORY[:TAG]]
+    
+### Aliases:
+    
+    docker image ls, docker image list, docker images
+    
+### Options:
+
 | Parameter                 | Explanation                                                                                                   |
 |:--------------------------|:--------------------------------------------------------------------------------------------------------------|
 | -a, --all                 | Show all images (default hides intermediate images)                                                           |
@@ -31,9 +31,10 @@
 | --no-trunc                | Don't truncate output                                                                                         |
 | -q, --quiet               | Only display container IDs                                                                                    |
 
-### Example:
+### Examples:
 
 > ```bash
+> $ docker images -a
 > $ docker images --no-trunc --format "table {{.Digest}}\t{{.ID}}\t{{.Repository}}\t{{.Tag}}\t{{.Size}}"
 > ```
 
@@ -42,13 +43,13 @@
 ## ``List containers``
 
 ### Usage:
-
+    
     docker container ls [OPTIONS]
-
+    
 ### Aliases:
-
+    
     docker container ls, docker container list, docker container ps, docker ps
-
+    
 ### Options:
 
 | Parameter         | Explanation                                                       | State             |
@@ -58,10 +59,47 @@
 | -n, --last int    | Show n last created containers (includes all states) (default -1) | All states        |
 | -q, --quiet       | Only display container IDs                                        | Just running      |
 
-### Example:
+### Examples:
 
-> 
 > ```bash
+> $ docker container ls
 > $ docker container ls -a
 > ```
-> 
+
+<br />
+
+## ``Run containers``
+    
+Create and run a new container from an image
+    
+### Usage:
+    
+    docker container run [OPTIONS] IMAGE [COMMAND] [ARG...]
+    
+### Aliases:
+    
+    docker container run, docker run
+    
+### Options:
+
+| Parameter                 | Explanation										|
+|:--------------------------|:--------------------------------------------------|
+| -d, --detach              | Run container in background and print container ID|
+| -t, --tty                 | Allocate a pseudo-TTY								|
+| -i, --interactive         | Keep STDIN open even if not attached				|
+| --rm                      | Automatically remove the container when it exits	|
+| --name string             | Assign a name to the container					|
+| -p, --publish list        | Publish a containers port(s) to the host			|
+| -h, --hostname string     | Container host name								|
+| --network network			| Connect a container to a network					|
+| -v						| Bind mount a volume								|
+   
+STDIN - Entrada padrão que o dado, frequentemente texto, está indo para um programa
+    
+### Examples:
+
+> ```bash
+> $ docker container run -dti --rm --name first-hello-world hello-world
+> $ docker container run -it -d --rm -p 8080:80 nginx
+> $ docker container run -d --hostname my-rabbit --name some-rabbit -p 5672:5672 -p 15672:15672 rabbitmq:3-management
+> ```

@@ -103,3 +103,32 @@ STDIN - Entrada padrão que o dado, frequentemente texto, está indo para um pro
 > $ docker container run -it -d --rm -p 8080:80 nginx
 > $ docker container run -d --hostname my-rabbit --name some-rabbit -p 5672:5672 -p 15672:15672 rabbitmq:3-management
 > ```
+
+<br />
+
+## ``Remove containers``
+
+Remove one or more containers
+
+### Usage:
+  
+    docker container rm [OPTIONS] CONTAINER [CONTAINER...]
+  
+### Aliases:
+  
+    docker container rm, docker container remove, docker rm
+  
+### Options:
+
+| Parameter                 | Explanation											                      |
+|:--------------------------|:------------------------------------------------------|
+| -f, --force				        |Force the removal of a running container (uses SIGKILL)|
+| -l, --link				        |Remove the specified link								              |
+| -v, --volumes				      |Remove anonymous volumes associated with the container	|
+
+### Examples:
+
+> ```bash
+> $ docker container rm c98307310146
+> $ docker container rm first-hello-world
+> ```

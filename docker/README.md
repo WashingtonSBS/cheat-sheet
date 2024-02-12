@@ -6,6 +6,9 @@
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" />
 
+<details>
+<summary>List images</summary>
+
 ## ``List images``
 
 ### Usage:
@@ -39,6 +42,10 @@
 > ```
 
 <br />
+</details>
+
+<details>
+<summary>List containers</summary>
 
 ## ``List containers``
 
@@ -67,6 +74,10 @@
 > ```
 
 <br />
+</details>
+
+<details>
+<summary>Run container</summary>
 
 ## ``Run containers``
     
@@ -105,6 +116,10 @@ STDIN - Entrada padrão que o dado, frequentemente texto, está indo para um pro
 > ```
 
 <br />
+</details>
+
+<details>
+<summary>Remove containers</summary>
 
 ## ``Remove containers``
 
@@ -132,3 +147,5 @@ Remove one or more containers
 > $ docker container rm c98307310146
 > $ docker container rm first-hello-world
 > ```
+
+</details>
